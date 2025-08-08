@@ -1,0 +1,288 @@
+{
+    "Home": {
+        "data": {
+            "1": {
+                "id": 1,
+                "name": "start",
+                "data": {
+                    "fields": [
+                        {
+                            "label": "name",
+                            "type": "TEXT",
+                            "value": "ivan"
+                        },
+                        {
+                            "label": "lastname",
+                            "type": "TEXT",
+                            "value": "perevozchikov"
+                        },
+                        {
+                            "label": "partfolio",
+                            "type": "FILE",
+                            "value": "C:\\fakepath\\lv_0_20250731103832 (1).mp4"
+                        }
+                    ],
+                    "title": "start"
+                },
+                "class": "start",
+                "html": "<div class=\"node-title\">start</div><div class=\"node-type\">Start</div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {},
+                "outputs": {
+                    "output_1": {
+                        "connections": [
+                            {
+                                "node": "2",
+                                "output": "input_1"
+                            },
+                            {
+                                "node": "3",
+                                "output": "input_1"
+                            },
+                            {
+                                "node": "4",
+                                "output": "input_1"
+                            }
+                        ]
+                    }
+                },
+                "pos_x": 159.22222222222223,
+                "pos_y": 208
+            },
+            "2": {
+                "id": 2,
+                "name": "process",
+                "data": {
+                    "fields": [
+                        {
+                            "label": "name",
+                            "type": "TEXT",
+                            "value": "ivan"
+                        }
+                    ],
+                    "title": "name"
+                },
+                "class": "process",
+                "html": "<div class=\"node-title\">process</div><div class=\"node-type\">Process</div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {
+                    "input_1": {
+                        "connections": [
+                            {
+                                "node": "1",
+                                "input": "output_1"
+                            }
+                        ]
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "connections": [
+                            {
+                                "node": "5",
+                                "output": "input_1"
+                            }
+                        ]
+                    }
+                },
+                "pos_x": 648,
+                "pos_y": 81.77777777777777
+            },
+            "3": {
+                "id": 3,
+                "name": "process",
+                "data": {
+                    "fields": [
+                        {
+                            "label": "lastname",
+                            "type": "TEXT",
+                            "value": "perevozchikov"
+                        }
+                    ],
+                    "title": "lastname"
+                },
+                "class": "process",
+                "html": "<div class=\"node-title\">process</div><div class=\"node-type\">Process</div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {
+                    "input_1": {
+                        "connections": [
+                            {
+                                "node": "1",
+                                "input": "output_1"
+                            }
+                        ]
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "connections": [
+                            {
+                                "node": "5",
+                                "output": "input_1"
+                            }
+                        ]
+                    }
+                },
+                "pos_x": 651,
+                "pos_y": 277.8888888888889
+            },
+            "4": {
+                "id": 4,
+                "name": "process",
+                "data": {
+                    "fields": [
+                        {
+                            "label": "partfolio",
+                            "type": "FILE",
+                            "value": "C:\\fakepath\\lv_0_20250731103832 (1).mp4"
+                        }
+                    ],
+                    "title": "partfolio"
+                },
+                "class": "process",
+                "html": "<div class=\"node-title\">process</div><div class=\"node-type\">Process</div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {
+                    "input_1": {
+                        "connections": [
+                            {
+                                "node": "1",
+                                "input": "output_1"
+                            }
+                        ]
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "connections": [
+                            {
+                                "node": "5",
+                                "output": "input_1"
+                            }
+                        ]
+                    }
+                },
+                "pos_x": 662.1111111111111,
+                "pos_y": 488
+            },
+            "5": {
+                "id": 5,
+                "name": "condition",
+                "data": {
+                    "conditions": [
+                        {
+                            "field": "name",
+                            "type": "equals",
+                            "value": "ivan",
+                            "operator": "=="
+                        },
+                        {
+                            "field": "perevozchikov",
+                            "type": "is_type",
+                            "value": "TEXT"
+                        },
+                        {
+                            "field": "partfolio",
+                            "type": "is_type",
+                            "value": "IMAGE"
+                        }
+                    ],
+                    "title": "condition",
+                    "fields": []
+                },
+                "class": "condition",
+                "html": "<div class=\"node-title\">condition</div><div class=\"node-type\"><strong>Condition</strong></div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {
+                    "input_1": {
+                        "connections": [
+                            {
+                                "node": "2",
+                                "input": "output_1"
+                            },
+                            {
+                                "node": "3",
+                                "input": "output_1"
+                            },
+                            {
+                                "node": "4",
+                                "input": "output_1"
+                            }
+                        ]
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "connections": [
+                            {
+                                "node": "6",
+                                "output": "input_1"
+                            }
+                        ]
+                    },
+                    "output_2": {
+                        "connections": [
+                            {
+                                "node": "7",
+                                "output": "input_1"
+                            }
+                        ]
+                    }
+                },
+                "pos_x": 1111,
+                "pos_y": 205.88888888888889
+            },
+            "6": {
+                "id": 6,
+                "name": "process",
+                "data": {},
+                "class": "process",
+                "html": "<div class=\"node-title\">process</div><div class=\"node-type\">Process</div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {
+                    "input_1": {
+                        "connections": [
+                            {
+                                "node": "5",
+                                "input": "output_1"
+                            }
+                        ]
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "connections": []
+                    }
+                },
+                "pos_x": 1558,
+                "pos_y": 296.1111111111111
+            },
+            "7": {
+                "id": 7,
+                "name": "process",
+                "data": {},
+                "class": "process",
+                "html": "<div class=\"node-title\">process</div><div class=\"node-type\">Process</div><div class=\"node-content\"></div>",
+                "typenode": false,
+                "inputs": {
+                    "input_1": {
+                        "connections": [
+                            {
+                                "node": "5",
+                                "input": "output_2"
+                            }
+                        ]
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "connections": []
+                    }
+                },
+                "pos_x": 1569.111111111111,
+                "pos_y": 462
+            }
+        }
+    }
+}
