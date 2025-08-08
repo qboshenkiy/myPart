@@ -1,0 +1,68 @@
+<?= $this->extend('layouts/default') ?>
+<?= $this->section('drawflow') ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="<?= base_url('drawflow/draw/dist/drawflow.min.css') ?>" />
+  <link rel="stylesheet" href="<?= base_url('drawflow/style.css') ?>" />
+  <title>Drawflow Editor</title>
+</head>
+<body>
+  <div id="app">
+    <div id="topbar">
+      <div class="drag-item" draggable="true" data-node="start">Start</div>
+      <div class="drag-item" draggable="true" data-node="condition">Condition</div>
+      <div class="drag-item" draggable="true" data-node="end">End</div>
+      <div class="drag-item" draggable="true" data-node="process">Process</div>
+      <button id="export-json">Export JSON</button>
+      <button id="import-json">Import JSON</button>
+    </div>
+    <div id="drawflow" class="drawflow"></div>
+  </div>
+
+  <div id="node-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <div id="modal-body">
+        <div class="node-title">Заголовок узла</div>
+
+        <div class="field">
+          <label for="nodeTitleInput">Название узла</label>
+          <input type="text" id="nodeTitleInput" placeholder="Введите название" />
+        </div>
+
+        <div id="fields-container">
+
+        </div>
+
+        <div class="field">
+          <label for="inputName">Имя атрибута</label>
+          <input type="text" id="inputName" placeholder="Введите имя атрибута" />
+        </div>
+
+        <div class="field">
+          <label for="inputType">Тип атрибута</label>
+          <select id="inputType">
+            <option value="text">Текст</option>
+            <option value="number">Число</option>
+            <option value="textarea">Текстовая область</option>
+            <option value="image">Изображение</option>
+          </select>
+        </div>
+
+        <button id="addInputBtn">Добавить атрибут</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="file-input" style="display:none" accept=".json" />
+
+  <script src="<?= base_url('drawflow/draw/dist/drawflow.min.js') ?>"></script>
+  <script src="<?= base_url('drawflow/backend/main.js') ?>" type="module"></script>
+
+</body>
+
+</html>
+<?= $this->endSection() ?>

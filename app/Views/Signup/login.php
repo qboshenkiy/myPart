@@ -7,14 +7,12 @@
         <title>Responsive Login Form HTML CSS | CodingNepal</title>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
             * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
                 font-family: "Poppins", sans-serif;
             }
-
             body {
                 display: flex;
                 align-items: center;
@@ -24,7 +22,6 @@
                 background: #1abc9c;
                 overflow: hidden;
             }
-
             .wrapper {
                 max-width: 500px;
                 width: 100%;
@@ -32,7 +29,6 @@
                 border-radius: 5px;
                 box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
             }
-
             .wrapper .title {
                 height: 120px;
                 background: #16a085;
@@ -44,17 +40,14 @@
                 align-items: center;
                 justify-content: center;
             }
-
             .wrapper form {
                 padding: 25px 35px;
             }
-
             .wrapper form .row {
                 height: 60px;
                 margin-top: 15px;
                 position: relative;
             }
-
             .wrapper form .row input {
                 height: 100%;
                 width: 100%;
@@ -65,15 +58,12 @@
                 font-size: 18px;
                 transition: all 0.3s ease;
             }
-
             form .row input:focus {
                 border-color: #16a085;
             }
-
             form .row input::placeholder {
                 color: #999;
             }
-
             .wrapper form .row i {
                 position: absolute;
                 width: 55px;
@@ -87,21 +77,17 @@
                 align-items: center;
                 justify-content: center;
             }
-
             .wrapper form .pass {
                 margin-top: 12px;
             }
-
             .wrapper form .pass a {
                 color: #16a085;
                 font-size: 17px;
                 text-decoration: none;
             }
-
             .wrapper form .pass a:hover {
                 text-decoration: underline;
             }
-
             .wrapper form .button input {
                 margin-top: 20px;
                 color: #fff;
@@ -112,11 +98,9 @@
                 border: 1px solid #16a085;
                 cursor: pointer;
             }
-
             form .button input:hover {
                 background: #12876f;
             }
-
             .wrapper form .signup-link {
                 text-align: center;
                 margin-top: 45px;
@@ -131,95 +115,29 @@
             form .signup-link a:hover {
                 text-decoration: underline;
             }
-
-            .hidden_field {
-                display: none;
-            }
         </style>
         <!-- Font Awesome CDN link for icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     </head>
-
     <body>
         <div class="wrapper">
-            <div class="title"><span>Регистрация</span></div>
-            <?= form_open('signup/register') ?>
-            <?php if (session()->has('errors')): ?>
-                <?= view('alerts/error') ?>
-            <?php endif ?>
-
-            <div class="row">
-                <i class="fas fa-user"></i>
-                <input type="text" name="name" placeholder="Username" required />
-            </div>
-            <div class="row">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" required />
-            </div>
-            <div class="hidden_field">
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Username:</label>
-                    <div class="col-md-8">
-                        <input class="form-control" name="firstname" type="text" value="null">
-                    </div>
+            <div class="title"><span>Авторизация</span></div>
+            <?= form_open('signup/login') ?>
+                <?php if (session()->has('errors')): ?>
+                    <?= view('alerts/error') ?>
+                <?php endif ?>  
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Username" required />
                 </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Lastname:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" name="lastname" type="text" value="null">
-                    </div>
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required />
                 </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Email:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" name="email" type="text" value="null">
-                    </div>
+                <div class="row button">
+                    <input type="submit" value="Login" />
                 </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Description:</label>
-                    <div class="col-lg-8">
-                        <textarea class="form-control" name="description" type="text">null</textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Number:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" name="phone" type="text" value="null">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Avatar:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" name="avatar" type="text" value="avatar.png">
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Password:</label>
-                    <div class="col-md-8">
-                        <input class="form-control" type="password" value="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Confirm password:</label>
-                    <div class="col-md-8">
-                        <input class="form-control" type="password" value="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label"></label>
-                    <div class="col-md-8">
-                        <input type="submit" class="btn btn-primary" value="Save Changes">
-                        <span></span>
-                        <input type="reset" class="btn btn-default" value="Cancel">
-                    </div>
-                </div>
-            </div>
-            <div class="row button">
-                <input type="submit" value="Register" />
-            </div>
-            <div class="signup-link">A member? <a href="<?= site_url('signup/login') ?>">Уже есть аккаунт</a></div>
+                <div class="signup-link">Not a member? <a href="<?= site_url('signup/register') ?>">Создать аккаунт</a></div>
             <?= form_close() ?>
         </div>
     </body>
